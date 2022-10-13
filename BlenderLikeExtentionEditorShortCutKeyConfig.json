@@ -1,0 +1,144 @@
+{
+    "m_Id": "Default copy",
+    "m_ParentId": "",
+    "m_Entries": [
+        {
+            "identifier": {
+                "path": "Scene View/Toggle 2D Mode"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Version Control/Lock"
+            },
+            "combinations": [
+                {
+                    "m_KeyCode": 8,
+                    "m_Modifiers": 0
+                }
+            ]
+        },
+        {
+            "identifier": {
+                "path": "Version Control/Unlock"
+            },
+            "combinations": [
+                {
+                    "m_KeyCode": 39,
+                    "m_Modifiers": 0
+                }
+            ]
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Set Front View"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Set Orthographic Top View"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Set Right View"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Set Orthographic Front View"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Toggle Selection Outline"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Temporary Pan Tool 1"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Temporary Zoom Tool"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Temporary Orbit Tool"
+            },
+            "combinations": [
+                {
+                    "m_KeyCode": 325,
+                    "m_Modifiers": 0
+                }
+            ]
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Temporary Pan Tool 2"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Temporary FPS Tool"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Scene View/Temporary Pan Tool for 2D Mode"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Main Menu/Edit/Frame Selected"
+            },
+            "combinations": [
+                {
+                    "m_KeyCode": 266,
+                    "m_Modifiers": 0
+                }
+            ]
+        },
+        {
+            "identifier": {
+                "path": "URP/Decal: Handle changing pivot position and UVs"
+            },
+            "combinations": [
+                {
+                    "m_KeyCode": 8,
+                    "m_Modifiers": 0
+                }
+            ]
+        },
+        {
+            "identifier": {
+                "path": "URP/Decal: Handle changing size stretching UV"
+            },
+            "combinations": []
+        },
+        {
+            "identifier": {
+                "path": "Main Menu/Edit/Duplicate"
+            },
+            "combinations": [
+                {
+                    "m_KeyCode": 100,
+                    "m_Modifiers": 2
+                }
+            ]
+        }
+    ]
+}

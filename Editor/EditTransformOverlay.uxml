@@ -1,0 +1,49 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/BlenderLikeExtentions/EditTransformOverlay.uss?fileID=7433441132597879392&amp;guid=fcb425f3e5742114ea965447c48cc809&amp;type=3#EditTransformOverlay" />
+    <ui:VisualElement style="background-color: rgba(0, 0, 0, 0); min-width: 190px;">
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; height: auto; max-height: none; min-height: auto;">
+            <ui:VisualElement style="flex-grow: 1; flex-direction: row; height: auto; max-height: none; min-height: auto;">
+                <ui:Label text="座標系" enable-rich-text="false" style="-unity-text-align: middle-center; -unity-font-style: normal; font-size: 12px; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 2px; padding-right: 2px; padding-top: 2px; padding-bottom: 2px;" />
+                <ui:VisualElement name="tabs" style="flex-grow: 1; flex-direction: row; height: auto; max-height: none; min-height: auto;">
+                    <ui:Label text="グローバル" name="grobal" class="tab" />
+                    <ui:Label text="ローカル" name="local" class="tab" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement tooltip="変形の基準となる原点" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between; align-items: stretch; align-self: auto;">
+            <ui:Label tabindex="-1" text="ピボット" display-tooltip-when-elided="true" style="justify-content: flex-start; align-items: stretch; align-self: center;" />
+            <ui:EnumField type="BlenderLikeExtentions.TransformPivots, BlenderLikeExtentions" name="transformPivot" />
+        </ui:VisualElement>
+        <ui:VisualElement tooltip="ctrl押下中もスナップします" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between;">
+            <ui:Label tabindex="-1" text="グリッドスナップ" display-tooltip-when-elided="true" />
+            <ui:Toggle name="useSnap" />
+        </ui:VisualElement>
+        <ui:VisualElement tooltip="スナップ中の1単位" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                <ui:Label tabindex="-1" text="移動" display-tooltip-when-elided="true" />
+                <ui:FloatField value="1" name="snapMoveAmount" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                <ui:Label tabindex="-1" text="回転" display-tooltip-when-elided="true" />
+                <ui:FloatField value="5" name="snapRotateAmount" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                <ui:Label tabindex="-1" text="拡大" display-tooltip-when-elided="true" />
+                <ui:FloatField value="1.1" name="snapScaleAmount" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; justify-content: space-between;">
+            <ui:VisualElement tooltip="3Dカーソル" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; align-items: stretch; justify-content: space-between;">
+                <ui:Label tabindex="-1" text="3Dカーソル" display-tooltip-when-elided="true" style="align-self: center;" />
+                <ui:Toggle name="useCursor3D" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:Vector3Field tooltip="3Dカーソルの位置　shift+右マウスで移動 　shift+cで(0,0)にリセット" name="cursor3DPosition" />
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Button tabindex="-1" text="選択物→カーソル" display-tooltip-when-elided="true" name="objectToCursor3DButton" tooltip="スナップ" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+            <ui:Button tabindex="-1" text="カーソル→選択物" display-tooltip-when-elided="true" name="Cursor3DToObjectButton" tooltip="スナップ" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

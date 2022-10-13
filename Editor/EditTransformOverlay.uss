@@ -1,0 +1,45 @@
+.tab {
+    background-color: rgb(88, 88, 88);
+    flex-grow: 1;
+    font-size: 12px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    -unity-text-align: middle-center;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.tab:hover {
+    background-color: rgb(103, 103, 103);
+}
+
+.tab_selected {
+    background-color: rgb(70, 96, 124);
+    flex-grow: 1;
+    font-size: 12px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    -unity-text-align: middle-center;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+#cursor3DPosition FloatField {
+    max-width: 60px;
+}
