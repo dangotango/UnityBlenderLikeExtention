@@ -7,11 +7,13 @@ using UnityEditor;
 using UnityEditor.ShortcutManagement;
 using System;
 using System.Linq;
+using System.IO;
 
-//todo SceneView上のworld座標位置にカメラの方を向く＆大きさ固定のテクスチャを表示させる方法
-//todo UIElementをSerializedObjectにバインドさせるやり方。(UIElement上の値がグレイアウトしていて入力できない)
-//todo UIElementのussClassの当て方(Button要素にussClass(backgroundとかの指定)を当てても反映されない)
-//todo trackboll
+//分からない
+//SceneViewのワールド座標上に大きさ一定でカメラを向く形でテクスチャを描画させる方法。
+//移動モードで描画するHandleにパースがかかっている（透視投影時）。
+//UIElementでSerializedObjectにバインドする方法。(UIElement上の値がグレイアウトしていて入力できない)
+
 namespace BlenderLikeExtentions
 {
     [EditorTool("BlenderLikeExtension/Edit Transform")]
@@ -228,7 +230,7 @@ namespace BlenderLikeExtentions
 
         void ChangeMode(Modes nextMode)
         {
-            if (Mode == nextMode) return;
+            if (Mode == nextMode || Selection.count == 0) return;
 
             //最初の一回目
             if (Mode == Modes.None)
@@ -239,7 +241,6 @@ namespace BlenderLikeExtentions
             }
             else //他のモードから切り替え
                 foreach (var chache in transformChaches) chache.Undo();
-
             if (TransformPivot == TransformPivots.ActiveObject) center = activeTransform.position;
             else if (TransformPivot == TransformPivots.Cursor3D) center = cursor3DPosition;
             else center = Selection.transforms.Select(t => t.position).Aggregate((p, p2) => p + p2) / Selection.transforms.Length;
@@ -435,15 +436,15 @@ namespace BlenderLikeExtentions
                 EditEnd();
                 return;
             }
-            //数字打ち込みの時はここまで
+
             if (isInputEditing) return;
 
+            //マウス入力受付
             var inputStrength = currentEvent.shift ? .2f : 1f;//shiftを押しているときは入力値を抑える。
             var data = ScriptableSingleton<EditTransformScriptableData>.instance;
             var snap = useSnap;
 
-            //初期値　＋　変更量の累計で計算する。
-
+            //初期値＋変更量の累計＝現在値
             //移動モード    
             if (Mode == Modes.Move)
             {
@@ -754,10 +755,13 @@ namespace BlenderLikeExtentions
     [Overlay(typeof(SceneView), "EditTransform Overlay", "BlenderLike Overlay")]
     public class EditTransformOverlay : Overlay
     {
+
         public override VisualElement CreatePanelContent()
         {
-            var treeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/BlenderLikeExtentions/Editor/EditTransformOverlay.uxml");
-            var uss = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/BlenderLikeExtentions/Editor/EditTransformOverlay.uss");
+            var guids = AssetDatabase.FindAssets("t:BlenderLikeConfig");
+            var assetPath = Path.GetDirectoryName(AssetDatabase.GUIDToAssetPath(guids[0]));
+            var treeAsset = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(Path.Combine(assetPath, "EditTransformOverlay.uxml"));
+            var uss = AssetDatabase.LoadAssetAtPath<StyleSheet>(Path.Combine(assetPath, "EditTransformOverlay.uss"));
             var root = treeAsset.Instantiate();
             root.styleSheets.Add(uss);
 
