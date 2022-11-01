@@ -1,5 +1,7 @@
 # UnityBlenderLikeExtention
 
+![Animation](https://user-images.githubusercontent.com/88530716/199292226-a0eb446c-a1d3-435a-b644-450232e6325e.gif)
+
 Blenderのようにショートカットキーで操作するためのエディタ拡張<br>
 ショートカットの割り当てはBlenderLikeExtentionsShortCutProfile.jsonをインポートしてください<br>
 overlay等を使用しているので古いverのエディタでは動かないと思います。<br>
