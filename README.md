@@ -1,6 +1,6 @@
 # UnityBlenderLikeExtention
 
-Blenderの操作感を模倣するテスト。<br>
+Blenderのようにショートカットキーで操作するためのエディタ拡張<br>
 ショートカットの割り当てはBlenderLikeExtentionsShortCutProfile.jsonをインポートしてください<br>
 overlay等を使用しているので古いverのエディタでは動かないと思います。<br>
 
