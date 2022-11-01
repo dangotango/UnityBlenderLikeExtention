@@ -1,13 +1,9 @@
-using System.Net.NetworkInformation;
-using System.Collections.Generic;
-using System.Linq;
+
 using UnityEditor;
 using UnityEngine;
 using System;
 using UnityEditor.ShortcutManagement;
-using UnityEngine.UIElements;
-using System.Runtime.InteropServices;
-using System.Windows;
+
 namespace BlenderLikeExtentions
 {
     [InitializeOnLoad]
@@ -235,7 +231,7 @@ namespace BlenderLikeExtentions
             activeSceneView.LookAt(activeSceneView.pivot, Quaternion.LookRotation(direction), activeSceneView.size, activeSceneView.orthographic);
         }
     }
-    // パン シーンビュー内でカーソルをループさせるテスト
+    // パン
     // [DllImport("user32.dll")]
     // public static extern bool SetCursorPos(int X, int Y);
     // [DllImport("user32.dll")]

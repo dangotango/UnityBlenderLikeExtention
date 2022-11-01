@@ -9,10 +9,10 @@ using System;
 using System.Linq;
 using System.IO;
 
-//分からない
-//SceneViewのワールド座標上に大きさ一定でカメラを向く形でテクスチャを描画させる方法。
-//移動モードで描画するHandleにパースがかかっている（透視投影時）。
-//UIElementでSerializedObjectにバインドする方法。(UIElement上の値がグレイアウトしていて入力できない)
+//todo
+//ハンドルの描画にテクスチャを使う
+//ハンドルにパースがかからないようにする。(透視投影時）
+//UIElementをSerializedObjectでバインドさせる
 
 namespace BlenderLikeExtentions
 {
